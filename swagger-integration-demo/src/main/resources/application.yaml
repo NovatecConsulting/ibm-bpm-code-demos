@@ -1,0 +1,4 @@
+logging:
+  level:
+    root: WARN
+    de.novatec.ibmbpm: DEBUG

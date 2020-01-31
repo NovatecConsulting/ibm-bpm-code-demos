@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.2.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id "io.swagger.core.v3.swagger-gradle-plugin" version "2.1.0"
+	id "io.freefair.lombok" version "4.1.6"
+}
+
+group = 'de.novatec.ibmbpm'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
+//	compile group: 'io.springfox', name: "springfox-swagger2", version: '2.9.2'
+//	compile group: 'io.springfox', name: "springfox-swagger-ui", version: '2.9.2'
+	compile 'org.springdoc:springdoc-openapi-core:1.1.44'
+	compile 'org.springdoc:springdoc-openapi-ui:1.1.44'
+}
+
+test {
+	useJUnitPlatform()
+}
